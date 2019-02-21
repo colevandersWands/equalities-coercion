@@ -1,0 +1,168 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Expansions</title>
+  <meta name="description" content="expansions">
+  <meta name="author" content="evan">
+
+  <link rel="stylesheet" href="./style.css">
+
+  <!-- the scripts that make parsons work -->
+  <link href="./parsoning/parsons.css" rel="stylesheet" />
+  <link href="./parsoning/lib/prettify.css" rel="stylesheet" />
+  <script src="./parsoning/lib/prettify.js"></script>
+  <script src="./parsoning/include.js"></script>
+  <script src="./parsoning/lib/jquery.min.js"></script>
+  <script src="./parsoning/lib/jquery-ui.min.js"></script>
+  <script src="./parsoning/lib/jquery.ui.touch-punch.min.js"></script>
+  <script src="./parsoning/lib/underscore-min.js"></script>
+  <script src="./parsoning/lib/lis.js"></script>
+  <script src="./parsoning/parsons.js"></script>
+  <script src='./parsoning/index.js'></script>
+
+  <!-- the scripts that make the table work -->
+  <script src='./tabling/cast.js'></script>
+  <script src='./tabling/handler.js'></script>
+  <script src='./tabling/clear-table.js'></script>
+
+</head>
+
+<body>
+  <div class="navbar">
+      <a>(a</a>
+      <a>==</a>
+      <a>b)</a>
+      <a>&&</a>
+      <a>(a</a>
+      <a>===</a>
+      <a>b)</a>
+  </div>
+
+  <br>
+  <br>
+  <br>
+  <p>
+    ( inspect the page for logs, assertions & errors )
+  </p>
+  <a href='https://github.com/janke-learning/equalities-coercion'>back to repo</a> <br>
+  <a href='https://janke-learning.github.io/fosdem-2019/#/open-education'>back to slideshow</a>
+  <hr>
+  <div id="parsons">
+    <div name="parsons-boxes">
+        <!-- modify this line's id -->
+        <div id="shuffled-equalities" name="shuffled" class="sortable-code"></div>
+        <!-- modify this line's id -->
+        <div id="sorted-equalities" name="sorted" class="sortable-code"></div> 
+        <div style="clear:both;"></div>
+    </div>
+
+    <div name="parsons-buttons">
+        <!-- modify this line's id -->
+        <a href="#" id="reshuffle-equalities" name="reshuffle">Re-Shuffle</a>
+        <!-- modify this line's id -->
+        <a href="#" id="feedback-equalities" name="feedback">Get feedback</a>
+    </div>
+    <script>
+        // define your challenge here
+        config = {};
+
+        config.shuffled_id = "shuffled-equalities";
+        config.sorted_id = "sorted-equalities";
+        config.reshuffle_id = "reshuffle-equalities";
+        config.feedback_id = "feedback-equalities";
+        config.challenge = 
+                "(a == b); \n" +
+                "(a === b); \n" +
+                "val_1 && val_2; \n";
+
+        init_section(config);
+    </script>
+    <br>
+  </div>
+  <hr>
+  <div class="main">
+    <p>(inspect for more info, chrome or firefox are best)</p>
+    <table>
+        <tr>
+            <td>
+                Input:
+                <div id="a">
+                 a: <input type="text" value="type" id="a-type">
+                    <input type="text" value="value" id="a-value">
+                </div>
+                <div id="b">
+                 b: <input type="text" value="type" id="b-type">
+                    <input type="text" value="value" id="b-value">
+                </div>
+                <br>
+                <div id='expected'>
+                  Expected:
+                  <br>
+                  <input type="text" value="type" id="expected-type">
+                  <input type="text" value="value" id="expected-value">
+                  <br>
+                  <br>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button id="test-button" onclick='handler()'>test it </button> <a id="test-response"></a>
+            </td>
+        </tr>
+    </table> 
+
+    <table>
+      <tr>
+        <th>step</th>
+        <th>operation</th>
+        <th>value</th> 
+      </tr>
+      <tr>  <!--  o1    -->
+        <td>operation 1</td>
+        <td id="o1">a == b;</td>
+        <td></td> 
+      </tr>
+      <tr>  <!--  s1    -->
+        <td>value 1</td>
+        <td></td>
+        <td>
+          <input id="t-1" type="text" value=""> <br>
+          <input id="v-1" type="text" value="">
+        </td> 
+      </tr>
+      <tr>  <!--  o2    -->
+        <td>operation 2</td>
+        <td id="o2">a === b;</td>
+        <td></td> 
+      </tr>
+      <tr>  <!--  s2    -->
+        <td>value 2</td>
+        <td></td>
+        <td>
+          <input id="t-2" type="text" value=""> <br>
+          <input id="v-2" type="text" value="">
+        </td> 
+      </tr>
+      <tr>  <!--  o3    -->
+        <td>operation 3</td>
+        <td id="o3">val_1 && val_2;</td>
+        <td></td> 
+      </tr>
+      <tr>  <!--  sf    -->
+        <td>final value</td>
+        <td><button type="button" onclick="clear_table()">clear table</button></td>
+        <td id='actual'>
+          <input id="t-f" type="text" value=""> <br>
+          <input id="v-f" type="text" value="">
+        </td> 
+      </tr>
+    </table>
+  </div>
+  <br>
+  <hr>
+  <hr>
+  <a href="http://janke-learning.org" target="_blank"><img src="https://user-images.githubusercontent.com/18554853/50098409-22575780-021c-11e9-99e1-962787adaded.png" width="40" height="40"></img> Janke Learning</a>
+</body>
+</html>
