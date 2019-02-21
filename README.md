@@ -5,8 +5,8 @@ a deep study of this simple expression will help you understand how types, expre
 ### Index
 * [learning objectives](#learning-objectives)
 * [parsons & evaluation table](https://janke-learning.github.io/equalities-coercion)
-* [ast visualizer](#ast-visualizer)
 * [console exercises](#console-exercises)
+* [ast visualizer](#ast-visualizer)
 
 ---
 
@@ -18,18 +18,6 @@ a deep study of this simple expression will help you understand how types, expre
 * programming is computational steps: value -> operation -> value ...
 * breaking down & studying JS expressions
 * ast visualizer for help parsing long/complex expressions
-
----
-
-## ast visualizer (abstract syntax tree)
-
-[(a == b) && (a === b)](https://astexplorer.net/#/gist/e22d33e10f7c29268d5074803e35ced5/b63bf508b027cb7be2a27e8c6e841e12eac2fad4) 
-
-* select to hide everything just above the collapsible tree, makes it readable
-* this tool will be very helpful figuring out order of operations when expanding expressions
-    * the deepest operators are executed first, then their parents, ...
-* using this for anything but just expressions will likely be more confusing than helpful
-* this tool doesn't check for syntax errors and doesn't run code, so keep it simple and just copy in the expression. no need for variable declarations
 
 ---
 
@@ -98,6 +86,17 @@ the expansion:
   console.assert(actual === expected, 'try again');
 };
 ```
+---
+
+## ast visualizer (abstract syntax tree)
+
+[(a == b) && (a === b)](https://astexplorer.net/#/gist/e22d33e10f7c29268d5074803e35ced5/b63bf508b027cb7be2a27e8c6e841e12eac2fad4) 
+
+* select to hide everything just above the collapsible tree, makes it readable
+* this tool will be very helpful figuring out order of operations when expanding expressions
+    * the deepest operators are executed first, then their parents, ...
+* using this for anything but just expressions will likely be more confusing than helpful
+* this tool doesn't check for syntax errors and doesn't run code, so keep it simple and just copy in the expression. no need for variable declarations
 
 ___
 ___
