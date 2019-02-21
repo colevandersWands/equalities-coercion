@@ -4,7 +4,7 @@ a deep study of this simple expression will help you understand how types, expre
 
 ### Index
 * [learning objectives](#learning-objectives)
-* [parsons & evaluation table](https://janke-learning.github.io/equalities-coercion)
+* [interactive practice](https://janke-learning.github.io/equalities-coercion)
 * [console exercises](#console-exercises)
 * [ast visualizer](#ast-visualizer)
 
