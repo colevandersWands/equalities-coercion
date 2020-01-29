@@ -58,11 +58,6 @@ function handler() {
 
 
   // write response to user
-  console.log({ a: a, b: b });
-  console.table(log);
-  console.log('expected: ' + typeof expected + ', ' + expected);
-  console.log('actual: ' + typeof actual + ', ' + actual);
-  console.assert(assertion, "try again");
 
   if (assertion) {
     expected_div.style.backgroundColor = 'green';
@@ -87,4 +82,13 @@ function handler() {
   const v_f = document.getElementById("v-f");
   v_f.value = val_3;
 
+  // log user action
+  console.log({ a: a, b: b });
+  console.table(log);
+  console.log('expected: ' + typeof expected + ', ' + expected);
+  console.log('actual: ' + typeof actual + ', ' + actual);
+  console.assert(assertion, "try again");
+
+  // for the browser
+  return true;
 };
