@@ -1,6 +1,6 @@
 function clear_table() {
 
-  var assert_here = document.getElementById("assert-here");
+  var assert_here = document.getElementById("actual");
   assert_here.style.backgroundColor = 'white';
 
   var t_1 = document.getElementById("t-1");
